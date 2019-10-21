@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise №1</title>
+</head>
+<body>
+<h1>Convert  text from Kyrgyz to Latin</h1>
+<input id = "krText" type="text" value="" >
+<input type="button" value="Go" onclick="convertToLatin()">
+<h3 class="latinText"></h3>
+<br>
+
+<script>
+    function convertToLatin() {
+        let krText = document.querySelector("#krText").value;
+        let latinText = "";
+        let dictionary = {
+            А: "A",
+            а: "а",
+            Б: "B",
+            б: "b",
+            В: "V",
+            в: "v",
+            Г: "G",
+            г: "g",
+            Д: "D",
+            д: "d",
+            E: "E",
+            е: "e",
+            Ё: "Yo",
+            ё: "yo",
+            Ж: "Zh",
+            ж: "zh",
+            З: "Z",
+            з: "z",
+            И: "I",
+            и: "i",
+            Й: "Y",
+            й: "y",
+            К: "K",
+            к: "k",
+            Л: "L",
+            л: "l",
+            М: "M",
+            м: "m",
+            Н: "N",
+            н: "n",
+            Ң: "N",
+            ң: "n",
+            О: "O",
+            о: "o",
+            Ө: "O",
+            ө: "o",
+            П: "P",
+            п: "p",
+            Р: "R",
+            р: 'r',
+            С: 'S',
+            с: "s",
+            Т: "T",
+            т: "t",
+            У: "U",
+            у: "u",
+            Ү: "U",
+            ү: "u",
+            Ф: "F",
+            ф: "f",
+            Х: "H",
+            х: "h",
+            Ц: "C",
+            ц: "c",
+            Ч: "Ch",
+            ч: "ch",
+            Ш: "Sh",
+            ш: "sh",
+            Щ: "Sch",
+            щ: "sch",
+            ъ: "'",
+            ъ: "'",
+            Ы: "Y",
+            ы: "y",
+            Ь: "'",
+            ь: "'",
+            Э: "E",
+            э: "e",
+            Ю: "Yu",
+            ю: "yu",
+            Я: "Ya",
+            я: "ya",
+            " ": " "
+        }
+
+        krText = krText.split("");
+
+        for (i in krText) {
+            if (krText.hasOwnProperty(i)) {
+                if (dictionary[krText[i]] === undefined) {
+                    document.querySelector(".latinText").innerHTML = "Incorrect input. Try again!";
+                } else {
+                    latinText += dictionary[krText[i]]
+                    document.querySelector(".latinText").innerHTML = latinText + "<br>";
+                }
+            }
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
